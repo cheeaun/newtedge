@@ -1,0 +1,64 @@
+#star{
+width: 15em;
+height: 14.27em;
+position: relative;
+}
+
+#star span,
+#star{
+display: block;
+}
+
+#top{
+width: 0;
+height: 0;
+margin: auto;
+border-right: 4.64em solid transparent;
+border-left: 4.64em solid transparent;
+border-bottom: 14.27em solid;
+}
+
+#center{
+width: 5.7em;
+border-right: 4.65em solid transparent;
+border-left: 4.65em solid transparent;
+border-top: 3.36em solid;
+height: 0;
+position: absolute;
+top: 5.46em;
+left: 0;
+z-index: 100;
+text-align: center;
+}
+
+#bottom{
+position: absolute;
+bottom: 0;
+left: 2.852em;
+border-right: 4.635em solid transparent;
+border-left: 4.635em solid transparent;
+border-bottom: 3.4em solid #fff;
+width: 0;
+height: 0;
+}
+
+#center span{
+margin-top: -2em;
+color: #000;
+background-color: transparent;
+font-weight: bold;
+}
+
+a#star:hover #center span{
+color: #fff;
+background-color: transparent;
+}
+
+a#star{
+color: #f90;
+background-color: transparent;
+}
+a#star:hover{
+color: #fc3;
+background-color: transparent;
+}

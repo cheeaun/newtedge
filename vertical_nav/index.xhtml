@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>CSS vertical navigation list</title>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="contents" href="/newtedge/" title="Home" />
+<link rel="prev" href="/newtedge/horizontal_nav/" title="CSS horizontal navigation list" />
+<link rel="next" href="/newtedge/element_hover/" title="CSS element hover effect" />
+</head>
+<body id="newtedge-cheeaun-com">
+<h1><abbr title="Cascading Style Sheets">CSS</abbr> vertical navigation list</h1>
+<ul class="nav">
+<li><strong>Browsers</strong>
+<ul>
+<li><a href="http://mozilla.org/">Mozilla</a></li>
+<li><a href="http://mozilla.org/products/firefox/">Firefox</a></li>
+<li><a href="http://mozilla.org/products/camino/">Camino</a></li>
+<li><a href="http://kmeleon.sourceforge.net/">K-meleon</a></li>
+<li><a href="http://galeon.sourceforge.net/">Galeon</a></li>
+<li><a href="http://netscape.com/">Netscape</a></li>
+<li><a href="http://microsoft.com/">Internet Explorer</a></li>
+<li><a href="http://opera.com/">Opera</a></li>
+<li><a href="http://apple.com/safari/">Safari</a></li>
+<li><a href="http://konqueror.org/">Konqueror</a></li>
+</ul></li>
+<li><strong>Web Design</strong>
+<ul>
+<li><a href="http://w3.org/">W3C</a></li>
+<li><a href="http://alistapart.com/">A List Apart</a></li>
+<li><a href="http://meyerweb.com/eric/css/edge/">css/edge</a></li>
+<li><a href="http://mako4css.com/">MaKo 4 CSS</a></li>
+<li><a href="http://glish.com/css/">CSS Layout Techniques</a></li>
+<li><a href="http://realworldstyle.com/">Real World Style</a></li>
+<li><a href="http://css-discuss.org/">css-discuss</a></li>
+<li><a href="http://css.nu/">CSS Pointers Group</a></li>
+</ul>
+</li>
+<li><strong>Search Engines</strong>
+<ul>
+<li><a href="http://google.com/">Google</a></li>
+<li><a href="http://dmoz.org/">Open Directory</a></li>
+<li><a href="http://yahoo.com/">Yahoo!</a></li>
+<li><a href="http://alltheweb.com/">All The Web</a></li>
+<li><a href="http://teoma.com/">Teoma</a></li>
+<li><a href="http://wisenut.com/">Wisenut</a></li>
+</ul>
+</li>
+<li><strong>Freeware</strong>
+<ul>
+<li><a href="http://www.all4you.dk/FreewareWorld/">Freeware World Team</a></li>
+<li><a href="http://tinyapps.org/">Tiny Apps</a></li>
+<li><a href="http://analogx.com/">AnalogX</a></li>
+<li><a href="http://freewarearena.com/">Freeware Arena</a></li>
+<li><a href="http://pricelessware.org/">Pricelessware</a></li>
+</ul>
+</li>
+<li><strong>Technology</strong>
+<ul>
+<li><a href="http://lockergnome.com/">Lockergnome</a></li>
+<li><a href="http://langa.com/">Langa</a></li>
+<li><a href="http://scotsnewletter.com/">Scot Finnie's newsletter</a></li>
+<li><a href="http://browsertune.com/">BrowserTune</a></li>
+<li><a href="http://techtv.com/">TechTV</a></li>
+<li><a href="http://neowin.net/">Neowin</a></li>
+<li><a href="http://techtv.com/callforhelp/">Call For Help</a></li>
+<li><a href="http://users.aol.com/axcel216/">Axcel216</a></li>
+<li><a href="http://wired.com/">Wired</a></li>
+</ul>
+</li>
+</ul>
+<p>This is a demonstration of a vertical navigation list or menu, which pops up a vertical drop-down menu on the right side when hovered.</p>
+<p>The <abbr title="Hypertext Markup language">HTML</abbr> codes are very simple, as follows:</p>
+<pre><code>&lt;ul class=&quot;nav&quot;&gt;
+&lt;li&gt;&lt;strong&gt;<var>a navigation item</var>&lt;/strong&gt;
+	&lt;ul&gt;
+	&lt;li&gt;<var>a navigation list item</var>&lt;/li&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;<var>a navigation item</var>&lt;/strong&gt;
+	&lt;ul&gt;
+	&lt;li&gt;<var>another navigation list item</var>&lt;/li&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+...
+&lt;/ul&gt;
+</code></pre>
+<p>The <code>ul</code> tag is assigned with the <code>class</code> of <code>nav</code>. That's the only <code>class</code> needed to be refered from the style sheet. The <abbr>CSS</abbr> codes are shown below, with comments:</p>
+<pre><code>
+<em class="remark">/*** Nav bar styles ***/</em>
+
+ul.nav,
+.nav ul{
+<em class="remark">/*Remove all spacings from the list items*/</em>
+	margin: 0;
+	padding: 0;
+	cursor: default;
+	list-style-type: none;
+}
+
+ul.nav{
+	width: 20ex;
+<em class="remark">/*Optional, to make the navigation bar positions on the left of the content*/</em>
+	float: left;
+	margin-right: 1em;
+}
+
+ul.nav&gt;li{
+	margin: 0;
+	padding: 2px 6px;
+}
+
+ul.nav li&gt;ul{
+<em class="remark">/*Make the sub list items invisible*/</em>
+	display: none;
+	position: absolute;
+	width: 20ex;
+	left: 20ex;
+	margin-top: -1.4em;
+	margin-left: 9px;
+}
+
+ul.nav li:hover&gt;ul{
+<em class="remark">/*When hovered, make them appear*/</em>
+	display : block;
+}
+
+.nav ul li a{
+<em class="remark">/*Make the hyperlinks as a block element, sort of a hover effect*/</em>
+	display: block;
+	padding: 2px 10px;
+}
+
+<em class="remark">/*** Menu styles (customizable) ***/</em>
+
+ul.nav,
+.nav ul,
+.nav ul li a{
+	background-color: #fff;
+	color: #369;
+}
+
+ul.nav li:hover,
+.nav ul li a:hover{
+	background-color: #369;
+	color: #fff;
+}
+
+ul.nav li:active,
+.nav ul li a:active{
+	background-color: #036;
+	color: #fff;
+}
+
+ul{
+	border: 1px solid #369;
+}
+
+.nav a{
+	text-decoration: none;
+}
+</code></pre>
+<h2>Notes</h2>
+<p>Please note that the look of the navigation bar can be changed and modified with a few tweaks into the codes based on your knowledge of <abbr title="(eXtensible) Hypertext Markup language">(X)HTML</abbr> and <abbr>CSS</abbr> with some trial and error experiments.</p>
+<p>One of the disadvantages of this navigation bar is that currently it's only limited to two-level navigational list, not more than three as it might break the whole layout. Though it's not impossible to create multi-level ones, but I'm more focus on keeping the markup clean, without the need of using multiple <code>id</code>s or <code>class</code>es. <ins datetime="2004-11-23T23:11+08:00">Again, <code>display: none</code> is not friendly for screen readers.</ins></p>
+<div class="foot-nav">
+<p><a href="/newtedge/horizontal_nav/" rel="prev">&laquo; <abbr>CSS</abbr> horizontal navigation list</a> | <a href="/newtedge/" rel="start">Home</a> | <a href="/newtedge/element_hover/" rel="next"><abbr>CSS</abbr> element hover effect &raquo;</a></p>
+</div>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=3427084;
+var sc_invisible=1;
+var sc_partition=38;
+var sc_security="81d42b31";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript>
+<div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c39.statcounter.com/3427084/0/81d42b31/1/" alt="free hit counter" /></a></div>
+</noscript>
+<!-- End of StatCounter Code -->
+</body>
+</html>

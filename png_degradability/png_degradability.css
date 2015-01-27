@@ -1,0 +1,12 @@
+img{
+background: transparent url("checkers.png"); /*for better visibility*/
+color: inherit;
+}
+
+/*Let's have some gecko fun :-D*/
+img:hover{
+background-position: 10px 10px;
+}
+img:active{
+background-position: 20px 10px;
+}

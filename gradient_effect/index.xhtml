@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Gradient Effect</title>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="contents" href="/newtedge/" title="Home" />
+<link rel="prev" href="/newtedge/drop_shadow/" title="Drop Shadow CSS" />
+<link rel="next" href="/newtedge/effective_banner/" title="Effective Banner Advertising" />
+</head>
+<body id="newtedge-cheeaun-com">
+<h1 id="head">Gradient Effect</h1>
+<p>&ldquo;Gradient effect&rdquo;? The topic of this page is not about how to create gradient effects. Actually, this page <em>simulates a battle</em> between the <a href="#gif"><abbr title="Graphic Interchange Format">GIF</abbr></a>, <a href="#jpeg"><abbr title="Joint Photographic Experts Group">JPEG</abbr></a> and <a href="#png"><abbr title="Portable Network Graphics">PNG</abbr></a> image formats. Yes, a battle to determine which image format is the best to show gradient effects on a web page. In this battle, two aspects are concerned:</p>
+<ul>
+<li>File size of the image</li>
+<li>Quality of the image</li>
+</ul>
+<p>Let the battle begins!</p>
+<h2 id="gif"><abbr>GIF</abbr></h2>
+<p>First, we meet our old friend, <abbr>GIF</abbr>. Below are some samples with different color depths and with/without dithering:</p>
+<ul class="battle">
+<li><img src="grad_8.gif" alt="Gradient effect in GIF format (8-bit, undithered)" title="8-bit, undithered" /> (7.8Kb)</li>
+<li><img src="grad_8_dither.gif" alt="Gradient effect in GIF format (8-bit, dithered)" title="8-bit, dithered" /> (20.1Kb)</li>
+<li><img src="grad_4.gif" alt="Gradient effect in GIF format (4-bit, undithered)" title="4-bit, undithered" /> (2.5Kb)</li>
+<li><img src="grad_4_dither.gif" alt="Gradient effect in GIF format (4-bit, dithered)" title="4-bit, dithered" /> (7.8Kb)</li>
+</ul>
+<p>From the samples above, it's clear that we would pick the 4th <abbr>GIF</abbr> image as our choice because it's small in file size yet still maintains its quality with dithering.</p>
+<h2 id="jpeg"><abbr>JPEG</abbr></h2>
+<p>Okay, how about <abbr>JPEG</abbr> then? Observe the following samples (all are <em>progressive</em> <abbr>JPEG</abbr> files), each  with different <del>lossless</del> <ins>lossy</ins> compression percentage:</p>
+<ul class="battle">
+<li><img src="grad.jpg" alt="Gradient effect in JPEG format (100% compression)" title="100% compression" /> (5.1Kb)</li>
+<li><img src="grad_90.jpg" alt="Gradient effect in JPEG format (90% compression)" title="90% compression" /> (2.2Kb)</li>
+<li><img src="grad_80.jpg" alt="Gradient effect in JPEG format (80% compression)" title="80% compression" /> (1.6Kb)</li>
+<li><img src="grad_70.jpg" alt="Gradient effect in JPEG format (70% compression)" title="70% compression" /> (1.5Kb)</li>
+<li><img src="grad_60.jpg" alt="Gradient effect in JPEG format (60% compression)" title="60% compression" /> (1.3Kb)</li>
+<li><img src="grad_50.jpg" alt="Gradient effect in JPEG format (50% compression)" title="50% compression" /> (1.2Kb)</li>
+<li><img src="grad_40.jpg" alt="Gradient effect in JPEG format (40% compression)" title="40% compression" /> (1.2Kb)</li>
+<li><img src="grad_30.jpg" alt="Gradient effect in JPEG format (30% compression)" title="30% compression" /> (1.1Kb)</li>
+<li><img src="grad_20.jpg" alt="Gradient effect in JPEG format (20% compression)" title="20% compression" /> (0.9Kb)</li>
+<li><img src="grad_10.jpg" alt="Gradient effect in JPEG format (10% compression)" title="10% compression" /> (0.8Kb)</li>
+</ul>
+<p>Wow, <abbr>JPEG</abbr> format is even better. The 5th <abbr>JPEG</abbr> sample would be a suitable candidate, as it's 6.6Kb smaller than our previous choice above. The quality is good enough, better than the 6th <abbr>JPEG</abbr> image above (40% compression).</p>
+<h2 id="png"><abbr>PNG</abbr></h2>
+<p>This is our last competitor, the new <abbr>PNG</abbr> format. Samples shown:</p>
+<ul class="battle">
+<li><img src="grad_32.png" alt="Gradient effect in PNG format (32-bit)" title="32-bit" /> (0.7Kb)</li>
+<li><img src="grad_24.png" alt="Gradient effect in PNG format (24-bit)" title="24-bit" /> (0.5Kb)</li>
+<li><img src="grad_8.png" alt="Gradient effect in PNG format (8-bit, undithered)" title="8-bit, undithered" /> (1.2Kb)</li>
+<li><img src="grad_8_dither.png" alt="Gradient effect in PNG format (8-bit, dithered)" title="8-bit, dithered" /> (14Kb)</li>
+<li><img src="grad_4.png" alt="Gradient effect in PNG format (4-bit, undithered)" title="4-bit, undithered" /> (0.3Kb)</li>
+<li><img src="grad_4_dither.png" alt="Gradient effect in PNG format (4-bit, dithered)" title="4-bit, dithered" /> (6.2Kb)</li>
+</ul>
+<p>Whoa! <abbr>PNG</abbr> rocks! Now, you obviously know which format is the winner. Yes, the 2nd <abbr>PNG</abbr> sample above. Among all the three competitors, it has the <strong>best quality in 24-bit color depth</strong> and incredibly <strong>smallest file size at just 0.5Kb</strong>!</p>
+<h2>The point</h2>
+<p>I hope you could see my point here, on this web page. I want to prove that <abbr>PNG</abbr> is the best image format around. There's no reason for not liking it. Use it and be happy with it.</p>
+<ins datetime="2004-11-24T03:45+08:00" class="note"><p><strong>Note</strong>: The PNG images above can be <em>further compressed</em> into smaller file size, with tools such as <a href="http://pmt.sf.net/">PNGcrush</a>, <a href="http://www.libpng.org/pub/png/apps/pngquant.html">PNGquant</a> and <a href="http://www.pobox.com/~jason1/pngrewrite/">PNGrewrite</a>.</p></ins>
+<div class="foot-nav">
+<p><a href="/newtedge/drop_shadow/" rel="prev">&laquo; Drop Shadow <abbr title="Cascading Style Sheets">CSS</abbr></a> | <a href="/newtedge/" rel="start">Home</a> | <a href="/newtedge/effective_banner/" rel="next">Effective Banner Advertising &raquo;</a></p>
+</div>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=3427084;
+var sc_invisible=1;
+var sc_partition=38;
+var sc_security="81d42b31";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript>
+<div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c39.statcounter.com/3427084/0/81d42b31/1/" alt="free hit counter" /></a></div>
+</noscript>
+<!-- End of StatCounter Code -->
+</body>
+</html>

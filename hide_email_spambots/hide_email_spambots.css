@@ -1,0 +1,16 @@
+address{
+width: 60%;
+}
+
+#email,
+address{
+padding: .5em .5ex;
+border: 1px solid #666;
+text-align: center;
+font-size: 1.5em;
+}
+
+address:after,
+#email:after{
+content: " <cheeaun\40gmail.com>";
+}

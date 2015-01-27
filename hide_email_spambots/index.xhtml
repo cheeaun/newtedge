@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Hiding email address from spambots</title>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="contents" href="/newtedge/" title="Home" />
+<link rel="prev" href="/newtedge/png_degradability/" title="32-bit PNG degradability in IE" />
+<link rel="next" href="/newtedge/image_gallery/" title="Interactive image gallery" />
+</head>
+<body id="newtedge-cheeaun-com">
+<h1>Hiding email address from spambots</h1>
+<p>If you are a so-called <em>spam fighter</em>, you would know a lot of ways to hide your email address from spambots. You might be using <abbr title="Hypertext Markup language">HTML</abbr> character entities, Javascript approach or any other methods to make your email address non-readable by those robots but readable to human beings. Some methods are very, very effective, some aren't so. Spambots might get smarter and smarter every day.</p>
+<p>So, I'm about to introduce a whole new way of hiding your email address, which is by using the <abbr title="Cascading Style Sheets">CSS</abbr> technology. This method is not 100% effective but it's worth trying anyway. Below is an example.</p>
+<p id="email">Lim Chee Aun</p>
+<p><abbr>HTML</abbr> codes:</p>
+<pre><code>&lt;p id=&quot;email&quot;&gt;<var>Lim Chee Aun</var>&lt;/p&gt;
+</code></pre>
+<p><abbr>CSS</abbr> codes:</p>
+<pre><code>#email:after{
+<em class="remark">/* \40 is a character entity for the '@' symbol */</em>
+content: &quot;<var> &lt;cheeaun\40cheeaun.com&gt;</var>&quot;;
+}
+</code></pre>
+<p>Ok, you might think this to be ridiculous for using the <code>id</code> attribute of the <code>p</code> tag and assigning a style block to it. Personally, I would implement this to the <code>address</code> tag instead.</p>
+<address>&copy; 2003 Lim Chee Aun</address>
+<p><abbr>HTML</abbr> codes:</p>
+<pre><code>&lt;address&gt;<var>&amp;copy; 2003 Lim Chee Aun</var>&lt;/address&gt;
+</code></pre>
+<p><abbr>CSS</abbr> codes:</p>
+<pre><code>address:after{
+<em class="remark">/* \40 is a character entity for the '@' symbol */</em>
+content: &quot;<var> &lt;cheeaun\40cheeaun.com</var>&gt;&quot;;
+}
+</code></pre>
+<p>There you go. I hope spambots wouldn't get any <em>smarter than this</em>!</p>
+<div class="foot-nav">
+<p><a href="/newtedge/png_degradability/" rel="prev">&laquo; 32-bit <abbr title="Portable Network Graphics">PNG</abbr> degradability in <abbr title="Internet Explorer">IE</abbr></a> | <a href="/newtedge/" rel="start">Home</a> | <a href="/newtedge/image_gallery/" rel="next">Interactive image gallery &raquo;</a></p>
+</div>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=3427084;
+var sc_invisible=1;
+var sc_partition=38;
+var sc_security="81d42b31";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript>
+<div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c39.statcounter.com/3427084/0/81d42b31/1/" alt="free hit counter" /></a></div>
+</noscript>
+<!-- End of StatCounter Code -->
+</body>
+</html>

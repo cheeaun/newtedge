@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Hide CSS from IE up to version 6.0</title>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="contents" href="/newtedge/" title="Home" />
+<link rel="prev" href="/newtedge/image_gallery/" title="Interactive image gallery" />
+<link rel="next" href="/newtedge/scalable_star/" title="Scalable Star" />
+</head>
+<body id="newtedge-cheeaun-com">
+<h1>Hide <abbr title="Cascading Style Sheets">CSS</abbr> from <abbr title="Internet Explorer">IE</abbr> up to version 6.0</h1>
+<p>Are you using Microsoft Internet Explorer? Which version then? The latest version? Well, if you are using it, you must be wondering why this page renders so plainly. This page renders well, with applied font styles and formatting, in other standards compliant browsers, especially Gecko-based ones. If you view the source of this web page, there <em>is</em> a stylesheet linked to it:</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;<span>style.css</span>&quot; /&gt;</code></pre>
+<p>Somehow the styles couldn't be read by <abbr>IE</abbr>. Why? All thanks to the <abbr>CSS</abbr> media-dependent <code>@import</code> rule. <abbr>IE</abbr> <del datetime="2004-11-24T02:49+08:00" cite="#update-2004-11-24T02:49">can</del> <ins datetime="2004-11-24T02:49+08:00" cite="#update-2004-11-24T02:49">couldn't</ins> read the following <code>@import</code> rule, with one media type:</p>
+<pre><code>@import url(&quot;stylesheet.css&quot;) <span>screen</span>;</code></pre>
+<p><del datetime="2004-11-24T02:49+08:00" cite="#update-2004-11-24T02:49">But, </del><abbr>IE</abbr> <del datetime="2004-11-24T02:49+08:00">cannot</del> <ins datetime="2004-11-24T02:49+08:00" cite="#update-2004-11-24T02:49">also couldn't</ins> read the following <code>@import</code> rule, with <strong>more</strong> than one media type:</p>
+<pre><code>@import url(&quot;stylesheet.css&quot;) <span>screen,projection</span>;</code></pre>
+<p>So, there you got it. If you are being cruel to <abbr title="Netscape Navigator 4">NS4</abbr> by using the <code>@import</code> rule, why not do the same to <abbr>IE</abbr> too by adding <del datetime="2004-11-24T02:49+08:00" cite="#update-2004-11-24T02:49">a few more</del> <ins datetime="2004-11-24T02:49+08:00" cite="#update-2004-11-24T02:49">some</ins> media types?</p>
+<p>Relevant resources:</p>
+<ul>
+<li><a href="http://www.w3development.de/css/hide_css_from_browsers/import/">http://www.w3development.de/css/hide_css_from_browsers/import/</a></li>
+<li><a href="http://flibble.mozdev.org/css/">http://flibble.mozdev.org/css/</a></li>
+</ul>
+<ins datetime="2004-11-24T02:49+08:00" class="update" id="update-2004-11-24T02:49"><p>* I've made a mistake. Somehow during testing this page, <abbr>IE</abbr> seems to be able to read the <code>screen</code> media. But actually, it couldn't.</p></ins>
+<div class="foot-nav">
+<p><a href="/newtedge/image_gallery/" rel="prev">&laquo; Interactive image gallery</a> | <a href="/newtedge/" rel="start">Home</a> | <a href="/newtedge/scalable_star/" rel="next">Scalable Star &raquo;</a></p>
+</div>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=3427084;
+var sc_invisible=1;
+var sc_partition=38;
+var sc_security="81d42b31";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript>
+<div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c39.statcounter.com/3427084/0/81d42b31/1/" alt="free hit counter" /></a></div>
+</noscript>
+<!-- End of StatCounter Code -->
+</body>
+</html>

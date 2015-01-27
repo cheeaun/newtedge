@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>CSS element hover effect</title>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="contents" href="/newtedge/" title="Home" />
+<link rel="prev" href="/newtedge/vertical_nav/" title="CSS vertical navigation list" />
+<link rel="next" href="/newtedge/png_degradability/" title="32-bit PNG degradability in IE" />
+</head>
+<body id="newtedge-cheeaun-com">
+<h1><abbr title="Cascading Style Sheets">CSS</abbr> element hover effect</h1>
+<p>There are quite a number of ways to create this effect. Some are listed here:</p>
+<ul>
+<li><p id="n1"><abbr title="Hypertext Markup language">HTML</abbr></p>
+<p><abbr>HTML</abbr> codes:</p>
+<pre><code>&lt;abbr title=&quot;Hypertext Markup language&quot;&gt;HTML&lt;/abbr&gt;
+</code></pre>
+<p><abbr>CSS</abbr> codes:</p>
+<pre><code>abbr[title]:after{
+<em class="remark">/*Workaround for Gecko*/</em>
+	content: &quot;&quot;;
+}
+
+abbr[title]:hover:after{
+<em class="remark">/*Shows the value of the title attribute when hovered*/</em>
+	content: &quot; (&quot; attr(title) &quot;)&quot;;
+}
+</code></pre></li>
+<li><p id="n2"><strong>some text</strong></p>
+<p><abbr>HTML</abbr> codes:</p>
+<pre><code>&lt;strong&gt;<var>some text</var>&lt;/strong&gt;
+</code></pre>
+<p><abbr>CSS</abbr> codes:</p>
+<pre><code>strong:after,
+#n2 strong:before{
+<em class="remark">/*Workaround for Gecko*/</em>
+	content: &quot;&quot;;
+}
+
+strong:hover:after{
+	content: &quot;\00BB&quot;
+}
+
+strong:hover:before{
+	content: &quot;\00AB&quot;
+}
+</code></pre></li>
+<li><p id="n3"><a href="http://w3.org/" title="World Wide Web Consortium">W3C</a></p>
+<p><abbr>HTML</abbr> codes:</p>
+<pre><code>&lt;a href=&quot;http://w3.org/&quot; title=&quot;World Wide Web Consortium&quot;&gt;W3C&lt;/a&gt;
+</code></pre>
+<p><abbr>CSS</abbr> codes:</p>
+<pre><code>a[title]:after{
+<em class="remark">/*Workaround for Gecko*/</em>
+	content: &quot;&quot;;
+}
+
+a[title]:hover{
+<em class="remark">/*Hides the anchor*/</em>
+	visibility: hidden;
+}
+
+a[title]:hover:after{
+<em class="remark">/*Shows the generated content*/</em>
+	content: attr(title) &quot; (&quot; attr(href) &quot;)&quot;;
+	visibility: visible;
+}
+</code></pre></li>
+<li><p id="n4"><span>sample text</span></p>
+<p><abbr>HTML</abbr> codes:</p>
+<pre><code>&lt;span&gt;<var>sample text</var>&lt;/span&gt;
+</code></pre>
+<p><abbr>CSS</abbr> codes:</p>
+<pre><code>span:before{
+<em class="remark">/*Workaround for Gecko*/</em>
+	content: &quot;&quot;;
+}
+
+span:hover:before{
+<em class="remark">/*The <abbr title="Uniform Resource Identifier">URI</abbr> pointing to the location of the image*/</em>
+	content: url("<var><a href="../newticon.png" type="image/png">../newticon.png</a></var>");
+}
+</code></pre></li>
+</ul>
+<p>The <abbr>HTML</abbr> and <abbr>CSS</abbr> codes displayed are just plain samples for you to understand the general idea of how this works. This sort of effect is, of course, extensible and may be tweaked to suit your desire. The only limitation is your imagination.</p>
+<ins datetime="2004-11-23T23:21+08:00" class="note"><p><strong>Note</strong>: The Gecko workaround codes above is applicable to older versions of Gecko-based browsers. Latest versions don't need this code anymore.</p></ins>
+<div class="foot-nav">
+<p><a href="/newtedge/vertical_nav/" rel="prev">&laquo; <abbr>CSS</abbr> vertical navigation list</a> | <a href="/newtedge/" rel="start">Home</a> | <a href="/newtedge/png_degradability/" rel="next">32-bit <abbr title="Portable Network Graphics">PNG</abbr> degradability in <abbr title="Internet Explorer">IE</abbr> &raquo;</a></p>
+</div>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=3427084;
+var sc_invisible=1;
+var sc_partition=38;
+var sc_security="81d42b31";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript>
+<div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c39.statcounter.com/3427084/0/81d42b31/1/" alt="free hit counter" /></a></div>
+</noscript>
+<!-- End of StatCounter Code -->
+</body>
+</html>

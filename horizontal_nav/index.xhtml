@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>CSS horizontal navigation list</title>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="contents" href="/newtedge/" title="Home" />
+<link rel="next" href="/newtedge/vertical_nav/" title="CSS vertical navigation list" />
+</head>
+<body id="newtedge-cheeaun-com">
+<h1><abbr title="Cascading Style Sheets">CSS</abbr> horizontal navigation list</h1>
+<p>Thanks to <a href="http://meyerweb.com/eric/">Eric Meyer</a> for <a href="http://meyerweb.com/eric/css/edge/menus/demo.html" title="Pure CSS Menus">inspiration</a>.</p>
+<p>There are two versions:</p>
+<ol>
+<li><a href="#inline">&quot;Inline&quot; version</a></li>
+<li><a href="#block">&quot;Block&quot; version</a></li>
+</ol>
+<h2 id="inline">&quot;Inline&quot; version</h2>
+<ul class="nav">
+<li><strong>Browsers</strong>
+<ul>
+<li><a href="http://mozilla.org/">Mozilla</a></li>
+<li><a href="http://mozilla.org/products/firefox/">Firefox</a></li>
+<li><a href="http://mozilla.org/products/camino/">Camino</a></li>
+<li><a href="http://kmeleon.sourceforge.net/">K-meleon</a></li>
+<li><a href="http://galeon.sourceforge.net/">Galeon</a></li>
+<li><a href="http://netscape.com/">Netscape</a></li>
+<li><a href="http://microsoft.com/">Internet Explorer</a></li>
+<li><a href="http://opera.com/">Opera</a></li>
+<li><a href="http://apple.com/safari/">Safari</a></li>
+<li><a href="http://konqueror.org/">Konqueror</a></li>
+</ul></li>
+<li><strong>Web Design</strong>
+<ul>
+<li><a href="http://w3.org/">W3C</a></li>
+<li><a href="http://alistapart.com/">A List Apart</a></li>
+<li><a href="http://meyerweb.com/eric/css/edge/">css/edge</a></li>
+<li><a href="http://mako4css.com/">MaKo 4 CSS</a></li>
+<li><a href="http://glish.com/css/">CSS Layout Techniques</a></li>
+<li><a href="http://realworldstyle.com/">Real World Style</a></li>
+<li><a href="http://css-discuss.org/">css-discuss</a></li>
+<li><a href="http://css.nu/">CSS Pointers Group</a></li>
+</ul>
+</li>
+<li><strong>Search Engines</strong>
+<ul>
+<li><a href="http://google.com/">Google</a></li>
+<li><a href="http://dmoz.org/">Open Directory</a></li>
+<li><a href="http://yahoo.com/">Yahoo!</a></li>
+<li><a href="http://alltheweb.com/">All The Web</a></li>
+<li><a href="http://teoma.com/">Teoma</a></li>
+<li><a href="http://wisenut.com/">Wisenut</a></li>
+</ul>
+</li>
+<li><strong>Freeware</strong>
+<ul>
+<li><a href="http://www.all4you.dk/FreewareWorld/">Freeware World Team</a></li>
+<li><a href="http://tinyapps.org/">Tiny Apps</a></li>
+<li><a href="http://analogx.com/">AnalogX</a></li>
+<li><a href="http://freewarearena.com/">Freeware Arena</a></li>
+<li><a href="http://pricelessware.org/">Pricelessware</a></li>
+</ul>
+</li>
+<li><strong>Technology</strong>
+<ul>
+<li><a href="http://lockergnome.com/">Lockergnome</a></li>
+<li><a href="http://langa.com/">Langa</a></li>
+<li><a href="http://scotsnewletter.com/">Scot Finnie's newsletter</a></li>
+<li><a href="http://browsertune.com/">BrowserTune</a></li>
+<li><a href="http://techtv.com/">TechTV</a></li>
+<li><a href="http://neowin.net/">Neowin</a></li>
+<li><a href="http://techtv.com/callforhelp/">Call For Help</a></li>
+<li><a href="http://users.aol.com/axcel216/">Axcel216</a></li>
+<li><a href="http://wired.com/">Wired</a></li>
+</ul>
+</li>
+</ul>
+<p>This is a demonstration of a horizontal navigation list or menu, which pops up a vertical drop-down menu when hovered.</p>
+<p>The <abbr title="Hypertext Markup language">HTML</abbr> codes are very simple, as follows:</p>
+<pre><code>&lt;ul class=&quot;nav&quot;&gt;
+&lt;li&gt;&lt;strong&gt;<var>a navigation item</var>&lt;/strong&gt;
+	&lt;ul&gt;
+	&lt;li&gt;<var>a navigation list item</var>&lt;/li&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;<var>a navigation item</var>&lt;/strong&gt;
+	&lt;ul&gt;
+	&lt;li&gt;<var>another navigation list item</var>&lt;/li&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+...
+&lt;/ul&gt;
+</code></pre>
+<p>The <code>ul</code> tag is assigned with the <code>class</code> of <code>nav</code>. That's the only <code>class</code> needed to be refered from the style sheet. The <abbr>CSS</abbr> codes are shown below, with comments:</p>
+<pre><code><em class="remark">/*** Nav bar styles ***/</em>
+
+ul.nav,
+.nav ul{
+<em class="remark">/*Remove all spacings from the list items*/</em>
+	margin: 0;
+	padding: 0;
+	cursor: default;
+	list-style-type: none;
+	display: inline;
+}
+
+ul.nav{
+	display: table;
+}
+ul.nav&gt;li{
+	display: table-cell;
+	position: relative;
+	padding: 2px 6px;
+}
+
+
+<del datetime="2004-11-23T20:28+08:00" cite="#update-2004-11-23T20:28">ul.nav&gt;li:hover{
+	padding-right: 1px;
+}</del> <a title="comments of the deleted text" href="#update-2004-11-23T20:28">[*]</a>
+
+ul.nav li&gt;ul{
+<em class="remark">/*Make the sub list items invisible*/</em>
+	display: none;
+	position: absolute;
+	max-width: 40ex;
+	margin-left: -6px;
+	margin-top: 2px;
+}
+
+ul.nav li:hover&gt;ul{
+<em class="remark">/*When hovered, make them appear*/</em>
+	display : block;
+}
+
+.nav ul li a{
+<em class="remark">/*Make the hyperlinks as a block element, sort of a hover effect*/</em>
+	display: block;
+	padding: 2px 10px;
+}
+
+<em class="remark">/*** Menu colors (customizable) ***/</em>
+
+ul.nav,
+.nav ul,
+.nav ul li a{
+	background-color: #fff;
+	color: #369;
+}
+
+
+ul.nav li:hover,
+.nav ul li a:hover{
+	background-color: #369;
+	color: #fff;
+}
+
+ul.nav li:active,
+.nav ul li a:active{
+	background-color: #036;
+	color: #fff;
+}
+
+ul.nav,
+.nav ul{
+	border: 1px solid #369;
+}
+
+.nav a{
+	text-decoration: none;
+}
+</code></pre>
+<h2 id="block">&quot;Block&quot; version</h2>
+<ul class="nav block">
+<li><strong>Browsers</strong>
+<ul>
+<li><a href="http://mozilla.org/">Mozilla</a></li>
+<li><a href="http://mozilla.org/products/firefox/">Firefox</a></li>
+<li><a href="http://mozilla.org/products/camino/">Camino</a></li>
+<li><a href="http://kmeleon.sourceforge.net/">K-meleon</a></li>
+<li><a href="http://galeon.sourceforge.net/">Galeon</a></li>
+<li><a href="http://netscape.com/">Netscape</a></li>
+<li><a href="http://microsoft.com/">Internet Explorer</a></li>
+<li><a href="http://opera.com/">Opera</a></li>
+<li><a href="http://apple.com/safari/">Safari</a></li>
+<li><a href="http://konqueror.org/">Konqueror</a></li>
+</ul></li>
+<li><strong>Web Design</strong>
+<ul>
+<li><a href="http://w3.org/">W3C</a></li>
+<li><a href="http://alistapart.com/">A List Apart</a></li>
+<li><a href="http://meyerweb.com/eric/css/edge/">css/edge</a></li>
+<li><a href="http://mako4css.com/">MaKo 4 CSS</a></li>
+<li><a href="http://glish.com/css/">CSS Layout Techniques</a></li>
+<li><a href="http://realworldstyle.com/">Real World Style</a></li>
+<li><a href="http://css-discuss.org/">css-discuss</a></li>
+<li><a href="http://css.nu/">CSS Pointers Group</a></li>
+</ul>
+</li>
+<li><strong>Search Engines</strong>
+<ul>
+<li><a href="http://google.com/">Google</a></li>
+<li><a href="http://dmoz.org/">Open Directory</a></li>
+<li><a href="http://yahoo.com/">Yahoo!</a></li>
+<li><a href="http://alltheweb.com/">All The Web</a></li>
+<li><a href="http://teoma.com/">Teoma</a></li>
+<li><a href="http://wisenut.com/">Wisenut</a></li>
+</ul>
+</li>
+<li><strong>Freeware</strong>
+<ul>
+<li><a href="http://www.all4you.dk/FreewareWorld/">Freeware World Team</a></li>
+<li><a href="http://tinyapps.org/">Tiny Apps</a></li>
+<li><a href="http://analogx.com/">AnalogX</a></li>
+<li><a href="http://freewarearena.com/">Freeware Arena</a></li>
+<li><a href="http://pricelessware.org/">Pricelessware</a></li>
+</ul>
+</li>
+<li><strong>Technology</strong>
+<ul>
+<li><a href="http://lockergnome.com/">Lockergnome</a></li>
+<li><a href="http://langa.com/">Langa</a></li>
+<li><a href="http://scotsnewletter.com/">Scot Finnie's newsletter</a></li>
+<li><a href="http://browsertune.com/">BrowserTune</a></li>
+<li><a href="http://techtv.com/">TechTV</a></li>
+<li><a href="http://neowin.net/">Neowin</a></li>
+<li><a href="http://techtv.com/callforhelp/">Call For Help</a></li>
+<li><a href="http://users.aol.com/axcel216/">Axcel216</a></li>
+<li><a href="http://wired.com/">Wired</a></li>
+</ul>
+</li>
+</ul>
+<p>This &quot;block&quot; version is obviously similar to the above one but the little difference lies in the width of the list label items. The whole navigation bar has a width of 100% as each label item always has similar width too, even if the browser window is resized, regardless of how much the numbers of label items are.</p>
+<p>The codes are exactly the same as the &quot;inline&quot; version but with some minor additions to the <code>ul.nav</code> selector:</p>
+<pre><code>ul.nav{
+	display: table;
+<em class="remark">/*Just add the following properties and values*/</em>
+	width: 100%;
+	table-layout: fixed;
+}
+</code></pre>
+<h2>Notes</h2>
+<p>Please note that the look of the navigation bar can be changed and modified with a few tweaks into the codes based on your knowledge of <abbr title="(eXtensible) Hypertext Markup language">(X)HTML</abbr> and <abbr>CSS</abbr> with some trial and error experiments.</p>
+<p>One of the disadvantages of this navigation bar is that currently it's only limited to two-level navigational list, not more than three as it might break the whole layout. <ins datetime="2004-11-23T23:03+08:00">Also, <code>display: none</code> is not friendly for screen readers.</ins></p>
+<p>There are also other quite similar <abbr>CSS</abbr> test cases:</p>
+<ul>
+<li><a href="http://pixy.cz/blogg/clanky/csshiermenu/">Hierarchical dynamic menu with <abbr>CSS</abbr></a> made by <a href="http://pixy.cz/">Petr Stanicek</a>.</li>
+<li><a href="http://moronicbajebus.com/playground/cssplay/pop-up-menus/"><abbr>CSS</abbr> Pop-Up Menus</a> made by <a href="http://moronicbajebus.com/">Seamus P. H. Leahy</a>.</li>
+<li><a href="http://uoguelph.ca/~stuartr/articles/csspulldownmenu.shtml">Pure <abbr>CSS</abbr> Pull-Down Menus</a> made by <a href="http://designmeme.com/">Stuart Robertson</a>.</li>
+<li><a href="http://alistapart.com/articles/dropdowns/">A List Apart: Suckerfish Dropdowns</a> by <a href="http://alistapart.com/authors/patrickgriffiths/">Patrick Griffiths</a> and <a href="http://danwebb.net/">Dan Webb</a>.</li>
+</ul>
+<ins datetime="2004-11-23T20:28+08:00" class="update" id="update-2004-11-23T20:28"><p>* The <code>padding-right</code> property has been removed due to the rendering tested on Mozilla Firefox 1.0, compared to the previous builds.</p></ins>
+<div class="foot-nav">
+<p><a href="/newtedge/" rel="start">Home</a> | <a href="/newtedge/vertical_nav/" rel="next"><abbr>CSS</abbr> vertical navigation list &raquo;</a></p>
+</div>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=3427084;
+var sc_invisible=1;
+var sc_partition=38;
+var sc_security="81d42b31";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript>
+<div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c39.statcounter.com/3427084/0/81d42b31/1/" alt="free hit counter" /></a></div>
+</noscript>
+<!-- End of StatCounter Code -->
+</body>
+</html>

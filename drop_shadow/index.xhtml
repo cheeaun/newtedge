@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Drop Shadow CSS</title>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="contents" href="/newtedge/" title="Home" />
+<link rel="prev" href="/newtedge/scalable_star/" title="Scalable Star" />
+<link rel="next" href="/newtedge/gradient_effect/" title="Gradient Effect" />
+</head>
+<body id="newtedge-cheeaun-com">
+<h1 id="head">Drop Shadow <abbr title="Cascading Style Sheets">CSS</abbr></h1>
+<p>I myself have thought of these three methods:</p>
+<ol>
+<li><a href="#bg"><code>background-color</code> method</a></li>
+<li><a href="#alpha">alpha channel method</a></li>
+<li><a href="#stretch">image stretching method</a></li>
+</ol>
+<div class="blur"><div class="shadow">
+<div class="content">
+<div class="blur float"><div class="shadow">
+<div class="content">bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</div>
+</div></div>
+<h2 id="bg"><code>background-color</code> method</h2></div>
+</div></div>
+<p>This method is pretty simple, by just defining three over-lapping boxes, with different background colors. The elements refered from the <code>blur</code> and <code>shadow</code> classes will be appplied with greyish background colors to act as shadows.</p>
+<p id="same"><abbr title="Hypertext Markup language">HTML</abbr> codes:</p>
+<pre><code>&lt;div class=&quot;blur&quot;&gt;
+&lt;div class=&quot;shadow&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;<var>bla bla</var>&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p><abbr>CSS</abbr> codes:</p>
+<pre><code>.blur{
+	background-color: #ccc; <em class="remark">/*shadow color*/</em>
+	color: inherit;
+	margin-left: 4px;
+	margin-top: 4px;
+}
+
+.shadow,
+.content{
+	position: relative;
+	bottom: 2px;
+	right: 2px;
+}
+
+.shadow{
+	background-color: #666; <em class="remark">/*shadow color*/</em>
+	color: inherit;
+}
+
+.content{
+	background-color: #fff; <em class="remark">/*background color of content*/</em>
+	color: #000; <em class="remark">/*text color of content*/</em>
+	border: 1px solid #000; <em class="remark">/*border color*/</em>
+	padding: .5em 2ex;
+}
+</code></pre>
+<p>The only disadvantage of this method is that it uses definite colors for its shadows, as it cannot blend well with other elements.</p>
+<div class="blur one"><div class="shadow two">
+<div class="content">
+<div class="blur float one"><div class="shadow two">
+<div class="content">bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</div>
+</div></div>
+<h2 id="alpha">alpha channel method</h2></div>
+</div></div>
+<p>This method is quite similar to the above one, but fixes the <em>blending</em> problem by using alpha transparent <abbr title="Portable Network Graphics">PNG</abbr> background images, instead of definite background colors. The <abbr>HTML</abbr> codes are <a href="#same">still the same</a> and you'll only need to modify some <abbr>CSS</abbr> codes, specifically the <code>blur</code> and <code>shadow</code> class selector.</p>
+<pre><code>.blur{
+	<em>background: transparent url(<a href="shadow1.png" type="image/png">shadow1.png</a>);</em>
+<em class="remark">/*path to the 80%-transparent 1x1pixel black-colored background image*/</em>
+	color: inherit;
+	margin-left: 4px;
+	margin-top: 4px;
+}
+
+...
+
+.shadow{
+	<em>background: transparent url(<a href="shadow2.png" type="image/png">shadow2.png</a>);</em>
+<em class="remark">/*path to the 60%-transparent 1x1pixel black-colored background image*/</em>
+	color: inherit;
+}
+
+...
+</code></pre>
+<h2 id="stretch">image stretching method</h2>
+<div class="shade"><img src="shadow.png" width="0" height="0" alt="" class="shade" />
+bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</div>
+<p>In my opinion, the above two methods are not so good because the shadow doesn't look <em>natural</em>. In other words, it's not realistic enough. So, I open up my graphic editor, create a rectangular box with drop shadow, and export the shadow into an image file. Maybe I can use this image file as the shadow for the block elements, replacing the <em>artificial shadow</em> used by the two methods just now?</p>
+<p>Here are the experimental <abbr>HTML</abbr> codes:</p>
+<pre><code>&lt;div class=&quot;shade&quot;&gt;
+&lt;img src=&quot;<a href="shadow.png" type="image/png">shadow.png</a>&quot; width=&quot;0&quot; height=&quot;0&quot; alt=&quot;&quot; class=&quot;shade&quot; /&gt;
+<var>bla bla</var>&lt;/div&gt;
+</code></pre>
+<p>The experimental <abbr>CSS</abbr> codes:</p>
+<pre><code>img.shade{
+	width: 37ex;
+	height: 9em;
+<em class="remark">/* specify the dimension of the image */</em>
+	display: block;
+	position: absolute;
+	z-index: -1;
+<em class="remark">/* force the image to show below the content */</em>
+	right: -3ex;
+	bottom: -1em;
+}
+
+div.shade{
+	width: 30ex;
+	height: 6em;
+<em class="remark">/* specify the dimension of the content, slightly smaller than the image */</em>
+	position: relative;
+	z-index: 1;
+<em class="remark">/* force the content to show above the image */</em>
+	background-color: #fff;
+	border: 1px solid #000;
+	padding: 1em 2ex;
+	margin-right: 6ex;
+	margin-bottom: 3em;
+}
+</code></pre>
+<p>There are three disadvantages in this method:</p>
+<ol>
+<li>As the image is stretched, it might not look <em>smooth</em>.</li>
+<li>Tested on Mozilla Firebird <ins datetime="2004-11-24T03:11+08:00">(now known as Mozilla Firefox)</ins>, the image sometimes <em>disappears</em>. In order to reappear it, you'll need to refresh the page or just scroll up and down.</li>
+<li>The content couldn't be <code>float</code>ed.</li>
+</ol>
+<p>So, there you go. All three methods for you to choose.</p>
+<h2>Wait! How about text shadow?</h2>
+<p>Okay, okay, if you notice the text shadow of the heading on top of this page (maybe using Gecko-based browsers), you should be surprised that it's not a graphic. Even better, it's resizable, by increasing/decreasing the font/text sizes of your browser. Below is an example:</p>
+<p><span id="text">text shadow</span></p>
+<p>Wondering how it's done? Here are the <abbr>HTML</abbr> codes:</p>
+<pre><code>&lt;span id=&quot;text&quot;&gt;<var>text shadow</var>&lt;/span&gt;
+</code></pre>
+<p><abbr>CSS</abbr> codes:</p>
+<pre><code>#text{
+	font-size: 3em; <em class="remark">/* optional. just to increase the font size. */</em>
+	display: block;
+	line-height: 1em;
+	color: #666; <em class="remark">/* shadow color */</em>
+	background-color: transparent;
+	white-space: nowrap; <em class="remark">/* wrapping breaks the effect */</em>
+}
+
+#text:before,
+#text:after{
+	content: &quot;<var>text shadow</var>&quot;; <em class="remark">/* generated text */</em>
+	display: block;
+}
+
+#text:before{
+	margin-bottom: -1.05em;
+	margin-left: 0.1ex;
+	color: #ccc; <em class="remark">/* shadow color */</em>
+	background-color: transparent;
+}
+
+#text:after{
+	margin-top: -1.05em;
+	margin-left: -0.1ex;
+	color: #fff; <em class="remark">/* text color */</em>
+	background-color: transparent;
+}</code></pre>
+<p>This may be useful, for now. <del datetime="2003">If I'm not mistaken, in the <abbr>CSS</abbr>3 drafts, the <code>text-shadow</code> property will/might be introduced to create shadows out of text. Cool.</del> <ins datetime="2003">Actually, in the <a href="http://w3.org/TR/CSS2"><abbr>CSS</abbr>2 specification</a>, there is the <a href="http://w3.org/TR/CSS2/text.html#propdef-text-shadow"><code>text-shadow</code> <abbr>CSS</abbr> property</a> which applies shadow effects to the text. However, there is lack of browsers support for this property.</ins></p>
+<p>Relevant resources:</p>
+<ul>
+<li><a href="http://www.saila.com/usage/shadow/">Simple CSS drop shadows</a> (<a href="http://www.evolt.org/article/Simple_CSS_drop_shadows/17/18583/">Evolt</a>)</li>
+<li><a href="http://nontroppo.org/test/shadow.html">Lurking in Shadows: CSS and drop shadow effects</a></li>
+<li><a href="http://alistapart.com/articles/cssdropshadows/">A List Apart: CSS Drop Shadows</a> by <a href="http://alistapart.com/authors/sergiovillarreal/">Sergio Villarreal</a> (reincarnation of <a href="http://1976design.com/blog/archive/2003/11/14/shadows/">Easy CSS drop shadows</a> by <a href="http://1976design.com/blog/">Dunstan Orchard</a>).</li>
+<li><a href="http://alistapart.com/articles/cssdrop2/">CSS Drop Shadows II: Fuzzy Shadows</a> by <a href="http://alistapart.com/authors/sergiovillarreal/">Sergio Villarreal</a>, again.</li>
+</ul>
+<div class="foot-nav">
+<p><a href="/newtedge/scalable_star/" rel="prev">&laquo; Scalable Star</a> | <a href="/newtedge/" rel="start">Home</a> | <a href="/newtedge/gradient_effect/" rel="next">Gradient Effect &raquo;</a></p>
+</div>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=3427084;
+var sc_invisible=1;
+var sc_partition=38;
+var sc_security="81d42b31";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript>
+<div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c39.statcounter.com/3427084/0/81d42b31/1/" alt="free hit counter" /></a></div>
+</noscript>
+<!-- End of StatCounter Code -->
+</body>
+</html>

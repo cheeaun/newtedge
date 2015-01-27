@@ -1,0 +1,39 @@
+li>p:first-child{
+padding: .5em .5ex;
+border: 1px solid #666;
+text-align: center;
+font-size: 1.5em;
+}
+
+#n1 abbr[title]:after,
+#n2 strong:after,
+#n2 strong:before,
+#n3 a[title]:after,
+#n4 span:before{
+content: "";
+}
+
+#n1 abbr[title]:hover:after{
+content: " (" attr(title) ")";
+}
+
+#n2 strong:hover:after{
+content: "\00BB"
+}
+
+#n2 strong:hover:before{
+content: "\00AB"
+}
+
+#n3 a[title]:hover{
+visibility: hidden;
+}
+
+#n3 a[title]:hover:after{
+content: attr(title) " (" attr(href) ")";
+visibility: visible;
+}
+
+#n4 span:hover:before{
+content: url("../newticon.png");
+}

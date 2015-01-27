@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Scalable Star</title>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="contents" href="/newtedge/" title="Home" />
+<link rel="prev" href="/newtedge/hide_css_ie/" title="Hide CSS from IE up to version 6.0" />
+<link rel="next" href="/newtedge/drop_shadow/" title="Drop Shadow CSS" />
+</head>
+<body id="newtedge-cheeaun-com">
+<h1>Scalable Star</h1>
+<a href="#" id="star">
+<span id="top"></span>
+<span id="center"><span>Star</span></span>
+<span id="bottom"></span>
+</a>
+<p>This work is highly inspired by <a href="http://tantek.com/">Tantek &Ccedil;elik</a>'s <a href="http://tantek.com/CSS/Examples/polygons.html">Study of Regular Polygons</a>, <a href="http://meyerweb.com/eric/">Eric Meyer</a>'s <a href="http://meyerweb.com/eric/css/edge/slantastic/demo.html">Slantastic Demo</a> and <a href="http://infimum.dk/">Lasse Reichstein Nielsen</a>'s <a href="http://infimum.dk/HTML/slantinfo.html">Information on Border Slants</a>. This might look familiar to <a href="http://infimum.dk/HTML/slantstar.html">Slant Star</a>, but not using the same method, I think. The difference might be that this test case doesn't work in Internet Explorer, though I never tend to test it thoroughly. What's so cool about this star is that it's a hyperlink, applied with a hover color, sort of like the effect on <a href="http://tantek.com/">Tantek's home page</a>.</p>
+<p>This star shape does look simple, but it took me hours to figure out how to form all the edges and calculations. All those complex calculations lead to a scalable star which feels a bit like <abbr title="Scalable Vector Graphics">SVG</abbr>, by increasing or decreasing the font/text sizes from your browser.</p>
+<p>The <abbr title="Hypertext Markup language">HTML</abbr> codes are very simple, as follows:</p>
+<pre><code>&lt;a href=&quot;<var>#</var>&quot; id=&quot;star&quot;&gt;
+&lt;span id=&quot;top&quot;&gt;&lt;/span&gt;
+&lt;span id=&quot;center&quot;&gt;&lt;span&gt;<var>Star</var>&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&quot;bottom&quot;&gt;&lt;/span&gt;
+&lt;/a&gt;
+</code></pre>
+<p>You may put any <abbr title="Uniform Resource Identifier">URI</abbr> values to the <code>href</code> attribute and replace <var>Star</var> with other text. The <abbr title="Cascading Style Sheets">CSS</abbr> codes are quite complicated, shown below with comments:</p>
+<pre><code><em class="remark">/*** Star styles ***/</em>
+
+#star{
+	width: 15em;
+	height: 14.27em;
+	position: relative;
+<em class="remark">/* Useful for absolute positioned elements */</em>
+}
+
+#star span,
+#star{
+	display: block;
+}
+
+#top{
+<em class="remark">/* Create a big triangle */</em>
+	width: 0;
+	height: 0;
+	margin: auto;
+	border-right: 4.64em solid transparent;
+	border-left: 4.64em solid transparent;
+	border-bottom: 14.27em solid;
+}
+
+#center{
+<em class="remark">/* Add two 'points' to the triangle */</em>
+	width: 5.7em;
+	border-right: 4.65em solid transparent;
+	border-left: 4.65em solid transparent;
+	border-top: 3.36em solid;
+	height: 0;
+	position: absolute;
+	top: 5.46em;
+	left: 0;
+	z-index: 100;
+	text-align: center;
+}
+
+#bottom{
+<em class="remark">/* Hide a small portion below the triangle */</em>
+	position: absolute;
+	bottom: 0;
+	left: 2.852em;
+	border-right: 4.635em solid transparent;
+	border-left: 4.635em solid transparent;
+	border-bottom: 3.4em solid #fff;
+	width: 0;
+	height: 0;
+}
+
+#center span{
+	margin-top: -2em;
+	color: #000;
+	<ins datetime="2004-11-24T03:03+08:00">background-color: transparent;</ins>
+	font-weight: bold;
+<em class="remark">/* this is customizable for the text */</em>
+}
+
+a#star:hover #center span{
+<em class="remark">/* hovered text color */</em>
+	color: #fff;
+	<ins datetime="2004-11-24T03:03+08:00">background-color: transparent;</ins>
+}
+
+<em class="remark">/* Hyperlink colors */</em>
+a#star{
+	color: #f90;
+	<ins datetime="2004-11-24T03:03+08:00">background-color: transparent;</ins>
+}
+a#star:hover{
+	color: #fc3;
+	<ins datetime="2004-11-24T03:03+08:00">background-color: transparent;</ins>
+}
+</code></pre>
+<p>The only disadvantage of this star demo is that the bottom 'spacing' has a definite color, in order to create the star shape. In the example above, the definite color is white. But then, if you change it to green, I'm sure it'll be perfect to replace the odd rectangular star for the <a href="http://meyerweb.com/eric/css/edge/slantastic/holiday.html">Slanty Little Greeting</a>.</p>
+<ins datetime="2004-11-24T03:04+08:00" class="note"><p><strong>Note</strong>: <code>transparent</code> is not a valid value for border colors. Therefore, the <abbr>CSS</abbr> codes shown above and used on this page are invalid.</p></ins>
+<div class="foot-nav">
+<p><a href="/newtedge/hide_css_ie/" rel="prev">&laquo; Hide <abbr>CSS</abbr> from <abbr title="Internet Explorer">IE</abbr> up to version 6.0</a> | <a href="/newtedge/" rel="start">Home</a> | <a href="/newtedge/drop_shadow/" rel="next">Drop Shadow <abbr>CSS</abbr> &raquo;</a></p>
+</div>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=3427084;
+var sc_invisible=1;
+var sc_partition=38;
+var sc_security="81d42b31";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript>
+<div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c39.statcounter.com/3427084/0/81d42b31/1/" alt="free hit counter" /></a></div>
+</noscript>
+<!-- End of StatCounter Code -->
+</body>
+</html>

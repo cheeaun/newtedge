@@ -1,0 +1,82 @@
+ul#gallery, #gallery ul{
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+ul#gallery>li{
+float: left;
+padding: 10px;
+margin: 10px;
+width: auto;
+height: auto;
+border: 1px solid transparent;
+}
+
+ul#gallery>li ul{
+padding: .8em;
+/*margin-top: 50px;*/
+border: 1px solid #000;
+background-color: #fff;
+color: #000;
+font-size: 90%;
+max-width: 40%;
+display: none;
+position: absolute;
+}
+
+ul#gallery>li ul li{
+margin-top: 2px;
+}
+
+ul#gallery>li:hover{
+color: #369;
+background-color: transparent;
+border-color: #369;
+}
+
+ul#gallery>li:hover ul{
+display: block;
+list-style-type: none;
+}
+
+ul#gallery ul:before{
+content: "Image Information";
+font-size: 130%;
+font-weight: bold;
+border-bottom: 1px solid #999;
+display: block;
+}
+
+ul#gallery ul:after{
+content: "(click to view the larger version of this image)";
+font-size: 90%;
+text-align: right;
+border-top: 1px solid #999;
+display: block;
+margin-top: 1em;
+}
+
+ul#gallery img{
+width: 48px;
+height: 48px;
+display: block;
+}
+
+img,a img{
+border: 0;
+}
+
+ul#gallery:after{
+content: ".";
+display: block;
+height: 0;
+overflow: hidden;
+clear: both;
+visibility:hidden;
+}
+
+/*
+div.clear{
+clear: both;
+}*/

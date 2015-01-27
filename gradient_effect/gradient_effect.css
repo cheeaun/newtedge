@@ -1,0 +1,29 @@
+ul img{
+width: 400px;
+height: 100px;
+border: 0;
+}
+
+ul img[alt]:after{
+/*is this working??*/
+content: attr(alt);
+padding-left: 2ex;
+}
+
+ul.battle{
+list-style-type: none;
+padding-left: 0;
+}
+
+ul.battle li+li{
+padding-top: 1em;
+}
+
+ul.battle img{
+vertical-align: middle;
+font-weight: normal;
+}
+
+ul.battle li{
+font-weight: bold;
+}

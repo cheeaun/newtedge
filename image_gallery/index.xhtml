@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Interactive image gallery</title>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="contents" href="/newtedge/" title="Home" />
+<link rel="prev" href="/newtedge/hide_email_spambots/" title="Hiding email address from spambots" />
+<link rel="next" href="/newtedge/hide_css_ie/" title="Hide CSS from IE up to version 6.0" />
+</head>
+<body id="newtedge-cheeaun-com">
+<h1>Interactive image gallery</h1>
+<ul id="gallery">
+
+<li><a href="../newt.png" type="image/png"><img src="newthumbnail.png" alt="newt thumbnail" /></a><ul>
+<li><strong>File Size</strong>: 87Kb</li>
+<li><strong>Image Size</strong>: 128x128px</li>
+<li><strong>Description</strong>: A newt that's green in color.</li>
+</ul></li>
+
+<li><a href="../newt.png" type="image/png"><img src="newthumbnail.png" alt="newt thumbnail" /></a><ul>
+<li><strong>File Size</strong>: 86Kb</li>
+<li><strong>Image Size</strong>: 128x128px</li>
+<li><strong>Description</strong>: An amphibian. A green amphibian. An animal.</li>
+</ul></li>
+
+<li><a href="../newt.png" type="image/png"><img src="newthumbnail.png" alt="newt thumbnail" /></a><ul>
+<li><strong>File Size</strong>: 86.5Kb</li>
+<li><strong>Image Size</strong>: 128x128px</li>
+<li><strong>Description</strong>: A four-legged creature that crawls in the wild. Though it may look scary, a newt will cause no harm to human beings. It won't eat us, okay?</li>
+</ul></li>
+
+<li><a href="../newt.png" type="image/png"><img src="newthumbnail.png" alt="newt thumbnail" /></a><ul>
+<li><strong>Author</strong>: <a href="http://cheeaun.com/">Lim Chee Aun</a></li>
+<li><strong>File Size</strong>: 87.1Kb</li>
+<li><strong>Image Size</strong>: 128x128px</li>
+<li><strong>Description</strong>: This image/icon is based on the original icon of Mozilla 1.0. Since this icon is created from scratch, it's not owned by <a href="http://mozilla.org/">mozilla.org</a>. It's mine :-)</li>
+</ul></li>
+
+<li><a href="../newt.png" type="image/png"><img src="newthumbnail.png" alt="newt thumbnail" /></a><ul>
+<li><strong>File Size</strong>: 86.7Kb</li>
+<li><strong>Image Size</strong>: 128x128px</li>
+<li><strong>Description</strong>: Gosh.. I don't know how to describe this image..</li>
+</ul></li>
+
+<li><a href="../newt.png" type="image/png"><img src="newthumbnail.png" alt="newt thumbnail" /></a><ul>
+<li><strong>File Size</strong>: N/A</li>
+<li><strong>Image Size</strong>: 128x128px</li>
+<li><strong>Description</strong>: At last...</li>
+</ul></li>
+
+</ul>
+<p>This was used on my layout proposal for the Themes (and Extensions) page of Mozilla Firebird Help <ins datetime="2004-11-24T01:45">(now known as Mozilla Firefox Help, and has been officially moved to <a href="http://mozilla.org/products/firefox/support/" title="Firefox Help">mozilla.org</a>)</ins>, <del datetime="2004-11-24T01:47">few months ago</del> <ins datetime="2004-11-24T01:47">around the year 2003</ins>. At that time, it was sort of rejected by David Tenser, maybe due to its radical codes or incompatible layout with his site, though the layout somehow indirectly inspired him to improve his pages.</p>
+<p>The <abbr title="Cascading Style Sheets">CSS</abbr> codes of this image gallery page are rather useful for anyone to present all the images and data in one compact page, as the images' extra information is displayed as a popup. Even the <abbr title="Hypertext Markup language">HTML</abbr> codes are semantically clean, using the list module.</p>
+<p><abbr>HTML</abbr> codes:</p>
+<pre><code>&lt;ul id=&quot;gallery&quot;&gt;
+
+&lt;li&gt;&lt;a href=&quot;<var>path/to/image.png</var>&quot; type=&quot;<var>image/png</var>&quot;&gt;&lt;img src=&quot;<var>path/to/thumbnail.png</var>&quot; alt=&quot;<var>alternate text for thumbnail</var>&quot; /&gt;&lt;/a&gt;
+	&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;File Size&lt;/strong&gt;: <var>??Kb</var>&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Image Size&lt;/strong&gt;: <var>??px</var>&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Description&lt;/strong&gt;: <var>description of the image</var>&lt;/li&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a ...&gt;&lt;img ... /&gt;&lt;/a&gt;
+	&lt;ul&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;...&lt;/li&gt;
+
+&lt;li&gt;...&lt;/li&gt;
+
+&lt;/ul&gt;
+<del datetime="2004-11-24T02:22+08:00" cite="#update-2004-11-24T02:22"><em class="remark">&lt;!-- clear from the floats --&gt;</em>
+&lt;div class=&quot;clear&quot;&gt;&amp;nbsp;&lt;/div&gt;</del> <a href="#update-2004-11-24T02:22" title="comments of the deleted text">[**]</a>
+</code></pre>
+<p><abbr>CSS</abbr> codes:</p>
+<pre><code>ul#gallery, #gallery ul{
+<em class="remark">/*Remove all spacings and bullets*/</em>
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul#gallery&gt;li{
+	float: left;
+	padding: 10px;
+	margin: 10px;
+	width: auto;
+	height: auto;
+	border: 1px solid transparent;
+}
+
+ul#gallery&gt;li ul{
+	padding: .8em;
+	<del datetime="2003" cite="#update-2003">margin-top: 50px; <em class="remark">/*may be adjusted according to the dimension size of the thumbnail images*/</em></del> <a href="#update-2003" title="comments of the deleted text">[*]</a>
+	border: 1px solid #000;
+	background-color: #fff;
+	color: #000;
+	font-size: 90%;
+	max-width: 40%; <em class="remark">/*prevent the popups from being too wide*/</em>
+	display: none;
+	position: absolute;
+}
+
+ul#gallery&gt;li ul li{
+	margin-top: 2px; <em class="remark">/*some spacing between the image data*/</em>
+}
+
+ul#gallery&gt;li:hover{
+<em class="remark">/*of course, the colors are customizable*/</em>
+	color: #369;
+	background-color: transparent;
+	border-color: #369;
+}
+
+ul#gallery&gt;li:hover ul{
+	display: block;
+	list-style-type: none;
+}
+
+ul#gallery ul:before{
+<em class="remark">/*display the 'Image Information' at the top of the popups*/</em>
+	content: &quot;Image Information&quot;;
+	font-size: 130%;
+	font-weight: bold;
+	border-bottom: 1px solid #999;
+	display: block;
+}
+
+ul#gallery ul:after{
+<em class="remark">/*display the '(click to view the larger version of this image)' at the bottom of the popups*/</em>
+	content: &quot;(click to view the larger version of this image)&quot;;
+	font-size: 90%;
+	text-align: right;
+	border-top: 1px solid #999;
+	display: block;
+	margin-top: 1em;
+}
+
+ul#gallery img{
+<em class="remark">/*width and height may be adjusted according to the dimension size of the thumbnail images*/</em>
+	width: 48px;
+	height: 48px;
+	display: block;
+}
+
+img,a img{
+<em class="remark">/*Remove borders from images*/</em>
+	border: 0;
+}
+
+<del datetime="2004-11-24T02:22+08:00" cite="#update-2004-11-24T02:22">div.clear{
+<em class="remark">/*clear the floats*/</em>
+	clear: both;
+}</del> <a href="#update-2004-11-24T02:22" title="comments of the deleted text">[**]</a>
+
+<ins datetime="2004-11-24T02:22+08:00">ul#gallery:after{
+content: &quot;.&quot;;
+display: block;
+height: 0;
+overflow: hidden;
+clear: both;
+visibility:hidden;
+}</ins>
+</code></pre>
+<p>The only down side of this <abbr>CSS</abbr>-based image gallery is that all thumbnail images need to have the same width and height in pixels. If you want to display thumbnails with multiple dimensions, you'll need to modify the <abbr>CSS</abbr> codes a bit.</p>
+<p>You'll need to add a specific width and height values according to the global thumbnail dimensions. If all the thumbnails have a maximum height of 100px and maximum width of 200px, modify the values of the <code>width</code> and <code>height</code> properties.</p>
+<pre><code>ul#gallery&gt;li{
+	float: left;
+	padding: 10px;
+	margin: 10px;
+	<em>width: 200px;
+	height: 100px;</em>
+	border: 1px solid transparent;
+}
+</code></pre>
+<del datetime="2003" cite="#update-2003"><p>After that, modify the value of the <code>margin-top</code> property to <em>move</em> the popup lower down the image.</p>
+<pre><code>ul#gallery&gt;li ul{
+	padding: .8em;
+	<em>margin-top: 80px;</em>
+	border: 1px solid #000;
+	background-color: #fff;
+	color: #000;
+	font-size: 90%;
+	max-width: 40%;
+	display: none;
+	position: absolute;
+}
+</code></pre></del> <a href="#update-2003" title="comments of the deleted text">[*]</a>
+<p>Then, remove the <code>width</code> and <code>height</code> properties from the <code>img</code> element. Also add the <code>margin</code> property with the value of <code>auto</code> to align the image in the center.</p>
+<pre><code>ul#gallery img{
+	display: block;
+	<em>margin: auto;</em>
+}
+</code></pre>
+<p>As the <code>width</code> and <code>height</code> <abbr>CSS</abbr> properties have been removed, you'll need to add the <code>width</code> and <code>height</code> <abbr>HTML</abbr> attributes to the <code>img</code> tag.</p>
+<pre><code>&lt;ul id=&quot;gallery&quot;&gt;
+
+&lt;li&gt;&lt;a ...&gt;&lt;img ... <em>width=&quot;<var>??</var>&quot; height=&quot;<var>??</var>&quot;</em> /&gt;&lt;/a&gt;
+	...
+&lt;/li&gt;
+...
+</code></pre>
+<p>That's all folks. Have fun.</p>
+<p>Relevant resource: <a href="http://moronicbajebus.com/playground/cssplay/reformat-table/index2.html">Reformat the Table 2</a></p>
+<ins datetime="2003" class="update" id="update-2003"><p>* The <code>margin-top</code> property has been deleted due to the rendering tested on Mozilla Firebird 0.6.1, compared to the previous 0.6 build. Both builds render the top margin differently. So, I'm not sure which is the <em>valid</em> one.</p></ins>
+<ins datetime="2004-11-24T02:22+08:00" class="update" id="update-2004-11-24T02:22"><p>** The clearing element is removed because it is now an old fashioned way to clear floats. The 21st century style can be found at <a href="http://csscreator.com/attributes/containedfloat.php" title="Contained Floats">CSScreator.com</a>.</p></ins>
+<div class="foot-nav">
+<p><a href="/newtedge/hide_email_spambots/" rel="prev">&laquo; Hiding email address from spambots</a> | <a href="/newtedge/" rel="start">Home</a> | <a href="/newtedge/hide_css_ie/" rel="next">Hide <abbr>CSS</abbr> from <abbr title="Internet Explorer">IE</abbr> up to version 6.0 &raquo;</a></p>
+</div>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=3427084;
+var sc_invisible=1;
+var sc_partition=38;
+var sc_security="81d42b31";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript>
+<div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c39.statcounter.com/3427084/0/81d42b31/1/" alt="free hit counter" /></a></div>
+</noscript>
+<!-- End of StatCounter Code -->
+</body>
+</html>

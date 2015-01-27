@@ -1,0 +1,109 @@
+body{
+font-family: verdana,sans-serif;
+font-size: .8em;
+}
+
+h1,h2{
+font-family: "trebuchet ms",arial,sans-serif;
+}
+
+p{
+width: 60%;
+text-align: justify;
+line-height: 1.5em;
+}
+
+pre,code,var{
+font-size: 1em;
+font-family: "courier new", courier, monospace;
+}
+
+pre,code{
+color: #909;
+background-color: #fff;
+}
+
+pre{
+border-left : 2px solid #666;
+padding-left: 2ex;
+margin-left: 4ex;
+}
+
+pre code .remark,
+pre code em{
+color: #060;
+background-color: transparent;
+font-style: normal;
+}
+
+var{
+color: #900;
+background-color: transparent;
+font-style: normal;
+}
+
+a,
+.update a,
+.note a,
+ins *{
+text-decoration: underline;
+}
+
+del *{
+text-decoration: line-through;
+}
+
+.update,
+.note{
+padding: 0 1em;
+display: block;
+margin: 1em 0;
+width: 70%;
+}
+
+.update,
+.update *,
+.note,
+.note *{
+text-decoration: none;
+}
+
+.update p,
+.note p{
+width: auto;
+}
+
+.update{
+border: 1px dashed #f00;
+}
+
+.note{
+border: 1px dashed #00f;
+}
+
+.update[id|="update"]>*:first-child:first-letter,
+del[cite|="#update"]+a[href|="#update"]{
+/*this is awesome*/
+text-decoration: none;
+font-weight: bold;
+color: #f00;
+}
+
+.foot-nav{
+margin: 5em 0;
+border-top: 1px solid #000;
+border-bottom: 1px solid #000;
+}
+
+.foot-nav p{
+text-align: center;
+width: 100%;
+}
+
+.tad{
+margin-top: 6em;
+line-height: 1.2em !important;
+font-size: .8em !important;
+color: #999;
+background-color: transparent;
+}

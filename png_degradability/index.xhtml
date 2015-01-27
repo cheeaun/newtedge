@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>32-bit PNG degradability in IE</title>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="contents" href="/newtedge/" title="Home" />
+<link rel="prev" href="/newtedge/element_hover/" title="CSS element hover effect" />
+<link rel="next" href="/newtedge/hide_email_spambots/" title="Hiding email address from spambots" />
+</head>
+<body id="newtedge-cheeaun-com">
+<h1>32-bit <abbr title="Portable Network Graphics">PNG</abbr> degradability in <abbr title="Internet Explorer">IE</abbr></h1>
+<p><abbr>PNG</abbr> is cool. It has better compression algorithm than <abbr title="Graphic Interchange Format">GIF</abbr>. It can support more than 256 colors. Best of all, it can support alpha transparency channels (32-bit). Unfortunately, <abbr>IE</abbr> (up to version 6.0) doesn't like it.</p>
+<p>There has been many attempts to <em>fix</em> this matter, such as using Javascript, Internet Explorer <abbr title="Cascading Style Sheets">CSS</abbr> extensions, <abbr title="et cetera">etc.</abbr> None is good enough, in my opinion. Fortunately, I've found one solution, not to force <abbr>IE</abbr> to display the alpha channels, but to make the <abbr>PNG</abbr> degrades well in <abbr>IE</abbr> instead.</p>
+<p>As some of you may know, <abbr>IE</abbr> tends to render the alpha channels of any 32-bit <abbr>PNG</abbr> images, as in greyish color. Here's an example:</p>
+<div class="illustration"><img src="../newt.png" width="128" height="128" alt="Newt" /></div>
+<p>If you are using <abbr>IE</abbr> (up to version 6.0), you'll notice the greyish color of the alpha channels.</p>
+<p>But wait till you see this second image:</p>
+<div class="illustration"><img src="newt.png" width="128" height="128" alt="second Newt" /></div>
+<p>This second image is a 32-bit <abbr>PNG</abbr> with alpha channels. Do you notice any greyish colors? Well, the technique is simple. Note that there are absolutely no Javascripts and <abbr>CSS</abbr> hacks used. The trick comes from within the file itself.</p>
+<p>I use a software called <a href="http://pobox.com/~jason1/tweakpng/">TweakPNG</a>, by <a href="http://pobox.com/~jason1/">Jason Summers</a>. Here are the steps:</p>
+<ol>
+<li>Open the <abbr>PNG</abbr> file with TweakPNG.</li>
+<li>Click &quot;Insert&quot; -&gt; &quot;bkGD (Background-color)&quot;.</li>
+<li>Select the newly created &quot;bkGD&quot; row.</li>
+<li>Right-click -&gt; &quot;Edit chunk...&quot; to change the colors, obviously to white color.</li>
+<li>Save the file and you're done.</li>
+</ol>
+<div class="screenshot"><img src="tweakpng.png" width="788" height="162" alt="tweakPNG" /></div>
+<p>You may edit the &quot;bkGD&quot; chunk to any color, depending on your web site, as <abbr>IE</abbr> will display this color <ins datetime="2004-11-24T01.32+08:00">as the background color with no transparency bit</ins>, instead of the greyish alpha channels. Other <abbr>PNG</abbr>-supported browsers will display the image normally, with alpha channels, by ignoring the &quot;bkGD&quot; chunk.</p>
+<ins datetime="2004-11-24T00:56+08:00" class="update"><p>A <em>much better</em> method has been found by <a href="http://kevinfreitas.net/">Kevin A. Freitas</a>, which is called the <a href="http://kevinfreitas.net/pro/articles/png-magic/">PNG Magic</a>. This method forces <abbr>IE</abbr> to render the transparency bits of the image, but not alpha-transparently. No hacks at all, and can be applied with a simple software called <a href="http://www.libpng.org/pub/png/apps/pngquant.html">PNGquant</a>. Here's an example:</p>
+<div class="illustration"><img src="newt-fs8.png" width="128" height="128" alt="third Newt" /></div>
+<p>Okay, this example above looks a bit jaggy in <abbr>IE</abbr>, but with a bit of tweaking, it can look better:</p>
+<div class="illustration"><img src="newt-reloaded.png" width="128" height="128" alt="fourth Newt" /></div>
+<p>Both examples will be displayed normally with alpha channels in other <abbr>PNG</abbr>-supported browsers.</p></ins>
+<div class="foot-nav">
+<p><a href="/newtedge/element_hover/" rel="prev">&laquo; <abbr>CSS</abbr> element hover effect</a> | <a href="/newtedge/" rel="start">Home</a> | <a href="/newtedge/hide_email_spambots/" rel="next">Hiding email address from spambots &raquo;</a></p>
+</div>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=3427084;
+var sc_invisible=1;
+var sc_partition=38;
+var sc_security="81d42b31";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript>
+<div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c39.statcounter.com/3427084/0/81d42b31/1/" alt="free hit counter" /></a></div>
+</noscript>
+<!-- End of StatCounter Code -->
+</body>
+</html>

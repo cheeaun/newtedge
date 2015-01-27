@@ -1,0 +1,25 @@
+@media screen,projection{
+
+.banner,
+.banner a{
+width: 468px;
+height: 60px;
+display: block;
+margin: auto;
+}
+
+.banner a span{
+display: none; /* hide the text */
+}
+
+.banner{
+background: transparent url("fox_banner.png") no-repeat;
+color: inherit;
+}
+
+.banner a:hover{
+background: transparent url("fox_banner.gif") no-repeat;
+color: inherit;
+}
+
+}

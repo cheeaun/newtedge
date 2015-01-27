@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Effective Banner Advertising</title>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="contents" href="/newtedge/" title="Home" />
+<link rel="prev" href="/newtedge/gradient_effect/" title="Gradient Effect" />
+</head>
+<body id="newtedge-cheeaun-com">
+<div class="banner"><a href="http://getfirefox.com/" title="Get Firefox"><span>Advertisement : Mozilla Firefox. Take back the web. Download now!</span></a></div>
+<h1 id="head">Effective Banner Advertising</h1>
+<h2 id="problem">The Problem</h2>
+<p>Honestly, I hate advertisements, almost all sorts of advertising methods such as banner advertisements, popup advertisements and pop-under advertisements. It's space-consuming, bandwidth-hogging, distracting, and truly unfriendly to my everyday surfing experience. I'm sure others might think the same perspective.</p>
+<p>However, I understand that advertising is important too, playing its role to keep the web spinning. Without advertising, there will be no free email, free web content, and free online services. As important as it gets, advertising has gone too far and caused  problems among Internet users. Advertisements graphics are getting larger, not only in file size but also their dimensions. Popup advertisements are getting <em>rude</em> to clutter the screen until they distract the user's concentration. Advertisements tend to get more animated, causing various accessibility problems to visually-disabled people.</p>
+<p>This phenomena leads us to have no other choice but to block all these pests, using some filtering software widely available on the web. Of course, webmasters don't want this to happen as they rely on advertising to support their <a href="http://www.webhostingsearch.com/dedicated-server.php">server</a> bills and maintenance.</p>
+<h2>The Solution</h2>
+<p>Fortunately, I've found a win-win solution for both the web surfers and the webmasters. This solution is bandwidth-friendly, and fully accessible, made possible with just a few <abbr title="Cascading Style Sheets">CSS</abbr> codes, applicable to all types of banner advertisements. Shown below are the codes and some comments:</p>
+<p><abbr title="Hypertext Markup language">HTML</abbr> codes:</p>
+<pre><code>&lt;div class=&quot;banner&quot;&gt;
+&lt;a href=&quot;<var>http://getfirefox.com/</var>&quot; title=&quot;<var>Get Firefox</var>&quot;&gt;
+&lt;span&gt;<var>Advertisement : Mozilla Firefox. Take back the web. Download now!</var>&lt;/span&gt;
+&lt;/a&gt;&lt;/div&gt;
+</code></pre>
+<p><abbr>CSS</abbr> codes:</p>
+<pre><code>@media screen,projection{
+
+.banner,
+.banner a{
+	<em class="remark">/* dimensions of the banner */</em>
+	width: 468px;
+	height: 60px;
+	display: block;
+	margin: auto; <em class="remark">/* optionally, align the banner to the center */</em>
+}
+
+.banner a span{
+	display: none; <em class="remark">/* hide the text */</em>
+}
+
+.banner{
+	<em class="remark">/* display the non-animated banner image, by default */</em>
+	background: transparent url(&quot;<a href="fox_banner.png" type="image/png">fox_banner.png</a>&quot;) no-repeat;
+	color: inherit;
+}
+
+.banner a:hover{
+	<em class="remark">/* display the animated banner image, only when hovered */</em>
+	background: transparent url(&quot;<a href="fox_banner.gif" type="image/gif">fox_banner.gif</a>&quot;) no-repeat;
+	color: inherit;
+}
+
+}
+</code></pre>
+<h2>The Advantages</h2>
+<h3>To the web surfers</h3>
+<p>Most browsers will load the non-animated graphic first on the page. They will only load the animated version when hovered.</p>
+<ul>
+<li><p>This method speeds up page loading because the browser downloads the lighter version of the banner. It will only download the animated version, which is bigger in file size, only on demand, by hovering over the banner link, which is quite bandwidth-friendly.</p></li>
+<li><p>As the default presentation of the banner is non-animated, it doesn't distract your concentration reading the web page.</p></li>
+</ul>
+<h3>To the webmasters</h3>
+<p>The banner image is displayed, linked via a stylesheet. There is no <code>img</code> tag used.</p>
+<ul>
+<li><p>This method is very good, because it (probably) works in <em>any</em> web browsers and web applications, including text-based browsers. In non-graphical, older or <abbr>CSS</abbr>-disabled browsers, the banner degrades into a normal text link, which is also quite an effective advertising technique.</p></li>
+<li><p>Using <abbr>CSS</abbr>, you have better control on the presentation and layout of the banner on the page.</p></li>
+<li><p>The banner couldn't be blocked by any filtering software. Most ad-blocking/content-filtering software block advertisements by detecting the path of the graphic and the standard banner dimensions. None of them reads the stylesheet.</p></li>
+<li><p>As there is no <code>img</code> tag used, this method is forward-compatible in web standards, because the <code>img</code> tag will/might be removed from the yet-to-be-finalized <abbr title="eXtensible Hypertext Markup Language">XHTML</abbr> 2.0 specification.</p></li>
+</ul>
+<h2>The Disadvantages</h2>
+<h3>To the web surfers</h3>
+<p>You couldn't block this type of banner advertisement, unfortunately. Even if you can, it will not be effective enough, because it will conflict with other non-related sites too. For example, Mozilla <del datetime="2004-11-25T03:03+08:00">Firebird</del> <ins datetime="2004-11-25T03:03+08:00">Firefox</ins> users could block this advertisement by adding the following codes to the 'userContent.css' file:</p>
+<pre><code><del datetime="2004-11-24T14:23+08:00">div[class=&quot;banner&quot;]</del>
+<ins datetime="2004-11-24T14:23+08:00">.banner</ins> a{
+	display: none !important;
+}
+</code></pre>
+<p>... or:</p>
+<pre><code><del datetime="2004-11-24T14:23+08:00">div[class=&quot;banner&quot;]</del>
+<ins datetime="2004-11-24T14:23+08:00">.banner</ins> a{
+	background-image: none !important;
+}
+</code></pre>
+<p>However, this might cause other sites which use the same <code>class</code> value of the <code>div</code> tag to render unexpectedly, maybe partially missing web content.</p>
+<h3>To the webmasters</h3>
+<p>Some people might still be able to block this advertisement, though. But, don't worry. As long as you don't assign site-specific <code>class</code> or <code>id</code> values to any elements on your page, you are safe. Even safer, you can change the value of the <code>class</code> attribute of the <code>div</code> tag to other more <em>commonly-used</em> values such as 'head', and not using <em>advertisements-related</em> values such as 'ad', 'adbanner' or 'advertisement'. The most ultimate method is not to use any <code>class</code> or <code>id</code> values at all, like this:</p>
+<p><abbr>HTML</abbr> codes:</p>
+<pre><code>...
+&lt;body ... &gt;
+&lt;div&gt;
+&lt;a href=&quot;<var>http://getfirefox.com/</var>&quot; title=&quot;<var>Get Firefox</var>&quot;&gt;
+&lt;span&gt;<var>Advertisement : Mozilla Firefox. Take back the web. Download now!</var>&lt;/span&gt;
+&lt;/a&gt;&lt;/div&gt;
+...
+&lt;/body&gt;
+...
+</code></pre>
+<p><abbr>CSS</abbr> codes:</p>
+<pre><code>@media screen,projection{
+
+body>div:first-child,
+body>div:first-child a{
+	...
+}
+
+body>div:first-child a span{
+	...
+}
+
+body>div:first-child{
+	...
+}
+
+body>div:first-child a:hover{
+	...
+}
+
+}
+</code></pre>
+<p>The codes above uses pattern matching, which involves the child selector and the <code>:first-child</code> pseudo-class, to refer to an element and assign the banner as the background image of that element. Unfortunately, the example above cannot work in Internet Explorer (up to version 6) and other older graphical browsers.</p>
+<ins datetime="2004-11-24T15:06+08:00"><p>As an aside, this type of advertisement may also be blocked by manipulating the <a href="http://cdn.mozdev.org/uriid/">URI id</a>.</p></ins>
+<h2>Additional Disadvantages</h2>
+<ul>
+<li><p>Opera 7.10 somehow couldn't support <abbr title="Graphic Interchange Format">GIF</abbr> animation of a background image applied from a stylesheet. Of course, this is a bug, which should be fixed, and might already been or will be fixed in <del datetime="2004-11-24T03:55+08:00">Opera 7.20</del> <ins datetime="2004-11-24T03:55+08:00">latest versions of Opera</ins>.</p></li>
+<li><p>An apparent critical flaw with this method involves screen readers, such as JAWS, which allow the browser to render the page with screen media styles applied. JAWS <em>reads</em> the screen as it is seen in a graphical browser. Since the contained text is hidden using <code>display:none</code>, it also gets hidden from JAWS, assumed not be read by it too. [Source: <a href="http://stopdesign.com/articles/css/replace-text/">Background Image to Replace Text</a>]</p>
+<ins datetime="2004-11-24T14:45+08:00"><p><a href="http://mezzoblue.com/tests/revised-image-replacement/" title="Revised Image Replacement">Alternative methods</a> do exist.</p></ins></li>
+</ul>
+<h2>The Conclusion</h2>
+<p>Of course, there are always advantages and disadvantages in anything. If you like this method, use it. Don't like it, just leave it. But, please <em>think twice</em>. <a href="#problem" title="The Problem">Read again.</a></p>
+<ins datetime="2004-11-24T15:11+08:00" class="note"><p><strong>Note</strong>: The banner images on this page has been changed and updated for Mozilla Firefox, replacing <a href="moz_banner.png" type="image/png">moz_banner.png</a> and <a href="moz_banner.gif" type="image/gif">moz_banner.gif</a>. The logos used in the banners are trademarks of the <a href="http://mozilla.org/">Mozilla Foundation</a>.</p></ins>
+<div class="foot-nav">
+<p><a href="/newtedge/gradient_effect/" rel="prev">&laquo; Gradient Effect</a> | <a href="/newtedge/" rel="start">Home</a></p>
+</div>
+<div class="banner"><a href="http://getfirefox.com/" title="Get Firefox"><span>Advertisement : Mozilla Firefox. Take back the web. Download now!</span></a></div>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=3427084;
+var sc_invisible=1;
+var sc_partition=38;
+var sc_security="81d42b31";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript>
+<div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c39.statcounter.com/3427084/0/81d42b31/1/" alt="free hit counter" /></a></div>
+</noscript>
+<!-- End of StatCounter Code -->
+</body>
+</html>
